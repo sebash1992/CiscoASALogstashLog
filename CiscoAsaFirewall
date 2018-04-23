@@ -26,5 +26,5 @@ CISCOFW713903 IKE %{DATA:action}, %{GREEDYDATA:reason}.
 # ASA-5-321001
 CISCOFW321001 Resource '%{DATA:resource}' limit of %{INT:limitreached} reached for context '%{DATA:context}'
 # ASA-4-313009
-CISCOFW313009 %{DATA:reason} code %{INT:code}, for %{WORD:srcinterface}:%{IP:src_ip}/%{INT:src_iport} \(%{GREEDYDATA}\) to %{WORD:dstinterface}:%{IP:dstip}/%{INT:dst_ip} (\(%{GREEDYDATA}\))?, ICMP id %{INT:icmpid}, ICMP type %{INT:icmptype}
+CISCOFW313009 %{DATA:reason} code %{INT:code}, for %{WORD:src_interface}:%{IP:srcp}/%{INT:srcport} \(%{GREEDYDATA}\) to %{WORD:dst_interface}:%{IP:dst_ip}/%{INT:dst_port} (\(%{GREEDYDATA}\))?, ICMP id %{INT:icmpid}, ICMP type %{INT:icmptype}
 #== End Cisco ASA ==
