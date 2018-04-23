@@ -1,0 +1,30 @@
+#== Begin Cisco ASA ==
+# AASA-2-321006
+CISCOFW321006 %{DATA:reason}%{INT:utilization}%
+# AASA-2-111010
+CISCOFW111010 User '%{DATA:username}', running '%{DATA:application-name}' from IP %{IP:ip_addr}, executed '%{GREEDYDATA:cmd}'
+# AASA-2-111005
+CISCOFW111005 %{IP:ip_addr} %{DATA:action}: %{GREEDYDATA:status}
+# AASA-2-502103
+CISCOFW502103 %{DATA:reason}: Uname: %{DATA:username} From: %{DATA:oldlvl} To: %{DATA:oldlvl}
+# AASA-2-111008
+CISCOFW111008 User '%{DATA:username}' %{DATA:action} the '%{DATA:cmd}' command
+# AASA-2-211004
+CISCOFW211004 WARNING: %{DATA:reason}. %{DATA:memoryrequired} required, %{DATA:memoryfound} found.
+# ASA-5-713119 ASA-5-713120
+CISCOFW713119_713120 Group = %{IP:groupip}, IP = %{IP:ip_addr}, PHASE %{INT:phasenumber} %{WORD:phaseStatus}(%{SPACE}\(msgid=%{WORD:msgid}\))?
+# ASA-5-713048
+CISCOFW713048 IP = %{IP:ip_addr},%{GREEDYDATA:reason}: Payload ID: %{INT:payloadid}
+# ASA-5-500003
+CISCOFW500003 %{GREEDYDATA:reason}\(hdrlen=%{INT:hdrlen}, pktlen=%{INT:pktlen}\) from %{IP:sourceip}/%{INT:port} to %{IP:destip}/%{INT:port}, flags: %{DATA:tcp_flags} , on interface %{DATA:flags}
+# ASA-5-713049
+CISCOFW713049 Group = %{IP:groupip}, IP = %{IP:ip_addr}, %{GREEDYDATA:reason} \(%{IP:groupname}\) %{SPACE}%{WORD:way}, Inbound SPI = %{WORD:inboudspi}, Outbound SPI = %{WORD:outboundspi}
+# ASA-5-713050
+CISCOFW713050 Group = %{IP:groupip}, IP = %{IP:ip_addr}, %{GREEDYDATA:action} for peer %{IP:ip_addr}. %{GREEDYDATA:reason} Remote Proxy %{IP:remoteproxyip}, Local Proxy %{IP:localproxyip}
+# ASA-4-713903
+CISCOFW713903 IKE %{DATA:action}, %{GREEDYDATA:reason}.
+# ASA-5-321001
+CISCOFW321001 Resource '%{DATA:resource}' limit of %{INT:limitreached} reached for context '%{DATA:context}'
+# ASA-4-313009
+CISCOFW313009 %{DATA:reason} code %{INT:code}, for %{WORD:srcinterface}:%{IP:src_ip}/%{INT:src_iport} \(%{GREEDYDATA}\) to %{WORD:dstinterface}:%{IP:dstip}/%{INT:dst_ip} (\(%{GREEDYDATA}\))?, ICMP id %{INT:icmpid}, ICMP type %{INT:icmptype}
+#== End Cisco ASA ==
